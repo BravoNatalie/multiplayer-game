@@ -26,7 +26,6 @@
 
             const game = createGame()
             const keyboardListener = createKeyboardListener(document)
-            keyboardListener.subscribe(game.movePlayer)
 
             const screen = document.getElementById('screen')
             renderScreen(screen, game, requestAnimationFrame)

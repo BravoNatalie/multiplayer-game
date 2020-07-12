@@ -149,6 +149,7 @@ export default function createGame() {
         movePlayer,
         state,
         setState,
-        subscribe
+        subscribe,
+        start
     }
 }
