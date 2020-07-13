@@ -1,0 +1,37 @@
+#screen {
+    border: 10px solid #CCC;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    width: 400px;
+    height: 400px;
+}
+
+
+#score-table {
+    font-size: 13px;
+    vertical-align: top;
+    text-align: center;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+#score-table tr.header td, th {
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 8px;
+}
+
+#score-table tr.footer td {
+    border-top: 1px solid #CCC;
+    font-size: 11px;
+}
+
+#score-table td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+#score-table .current-player {
+    color: #bdaa27;
+}
