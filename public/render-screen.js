@@ -10,20 +10,20 @@ export default function renderScreen(document, game, requestAnimationFrame, curr
 
     for (const playerId in game.state.players) {
         const player = game.state.players[playerId]
-        context.fillStyle = 'black'
+        context.fillStyle = '#330D05'
         context.fillRect(player.x, player.y, 1, 1)
     }
 
     for (const fruitId in game.state.fruits) {
         const fruit = game.state.fruits[fruitId]
-        context.fillStyle = 'green'
+        context.fillStyle = '#8CAE43'
         context.fillRect(fruit.x, fruit.y, 1, 1)
     }
 
     const currentPlayer = game.state.players[currentPlayerId]
 
     if(currentPlayer) {
-        context.fillStyle = '#F0DB4F'
+        context.fillStyle = '#BB2105'
         context.fillRect(currentPlayer.x, currentPlayer.y, 1, 1)
     }
 
@@ -104,5 +104,35 @@ export default function renderScreen(document, game, requestAnimationFrame, curr
             scoreTable.appendChild(row)
         }
         
+    }
+
+    function drawLeaf(){
+        const canvas = document.querySelector('canvas')
+		canvas.width = window.innerWidth
+		canvas.height = window.innerHeight
+		const ctx = canvas.getContext('2d')
+		const xoff = 0
+		const yoff = 0
+
+		ctx.beginPath();
+  		ctx.moveTo(314 + xoff, 195 + yoff);
+  		ctx.bezierCurveTo(307 + xoff, 217 + yoff, 246 + xoff, 284 + yoff, 298 + xoff, 378 + yoff);
+  		ctx.stroke();
+		ctx.fillStyle = "#8CAE43";
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.moveTo(314 + xoff, 195 + yoff);
+		ctx.bezierCurveTo(400 + xoff, 320 + yoff, 300 + xoff, 350 + yoff, 298 + xoff, 378 + yoff);
+		ctx.stroke();
+		ctx.fillStyle = "#8CAE43";
+	    ctx.fill();
+
+		ctx.beginPath();
+  		ctx.moveTo(315 + xoff, 220 + yoff);
+  		ctx.bezierCurveTo(320 + xoff, 340 + yoff, 280 + xoff, 350 + yoff, 298 + xoff, 378 + yoff);
+  		ctx.stroke();
+		ctx.fillStyle = "#8CAE43";
+		ctx.fill();
     }
 }

@@ -1,15 +1,42 @@
+
+body {
+    background-color: rgba(14,26,29, 0.98)
+}
+
+#game {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#game p {
+    font-size: 26px;
+    color:#F1E0BF;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 #screen {
-    border: 10px solid #CCC;
+    background-color: #F1E0BF;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     image-rendering: -moz-crisp-edges;
     width: 400px;
     height: 400px;
+    box-shadow: 3px 3px 8px 16px rgb(18, 26, 26);
+
 }
 
 
 #score-table {
+    position:absolute;
+    top:0;
+    right:0;
+    margin: 1%;
     font-size: 13px;
+    color:#F1E0BF;
     vertical-align: top;
     text-align: center;
     display: inline-block;
