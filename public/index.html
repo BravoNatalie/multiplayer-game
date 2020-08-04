@@ -18,6 +18,15 @@
             </tr>
         </table>
 
+        <div id= "login-modal" class="modal-wrapper">
+            <div class="modal" >
+                <div class="modal-content">
+                    <input type="text" name="nickname" id="nickname" placeholder="Nickname">
+                    <button id="start-game">Jogar</button>
+                </div>
+            </div>
+        </div>
+
         <script type="module">
             import createKeyboardListener from './keyboard-listener.js'
             import renderScreen from './render-screen.js'
@@ -69,6 +78,16 @@
             socket.on('remove-fruit', (command) => {
                 game.removeFruit(command)
             })
+
+            var modal = document.getElementById("login-modal");
+            var btn = document.getElementById("start-game");
+            var input = document.getElementsByTagName("input")[0];
+
+            btn.onclick = function() {
+                if(input.value.length > 0){
+                    modal.style.display = "none";
+                }
+            }
         </script>
     </body>
 </html>
