@@ -1,0 +1,8 @@
+TODO:
+- Enter no nick
+- bordas infinitas
+- pop up: "3, 2, 1...coma todas as folhinhas!"
+- score central
+- folhinhas surgindo mais rápido
+- começar com folhinhas
+- se um player ficar mais de 10 segundos sem comer folhinha, ele morre

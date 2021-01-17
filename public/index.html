@@ -32,10 +32,23 @@
             import renderScreen from './render-screen.js'
             import createGame from './game.js'
 
+            var modal = document.getElementById("login-modal");
+            var btn = document.getElementById("start-game");
+            var playerNick = document.getElementsByTagName("input")[0];
+
             const game = createGame()
             const keyboardListener = createKeyboardListener(document)
 
             const socket = io()
+
+            btn.onclick = function() {
+                if(playerNick.value.length > 0){
+                    modal.style.display = "none";
+
+                    socket.emit('send-nickname', playerNick.value);
+                }
+            }
+            
 
             socket.on('connect', () => {
                 const playerId = socket.id
@@ -79,15 +92,7 @@
                 game.removeFruit(command)
             })
 
-            var modal = document.getElementById("login-modal");
-            var btn = document.getElementById("start-game");
-            var input = document.getElementsByTagName("input")[0];
-
-            btn.onclick = function() {
-                if(input.value.length > 0){
-                    modal.style.display = "none";
-                }
-            }
+            
         </script>
     </body>
 </html>

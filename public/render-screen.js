@@ -3,6 +3,7 @@ export default function renderScreen(document, game, requestAnimationFrame, curr
     const screen = document.getElementById('screen')
     const context = screen.getContext('2d')
     const scoreTable = document.getElementById('score-table')
+    //const score = document.
 
     // clean screen
     context.fillStyle = 'white'
@@ -44,6 +45,7 @@ export default function renderScreen(document, game, requestAnimationFrame, curr
             const player = game.state.players[playerId]
             playersArray.push({
                 playerId,
+                nick: player.nick,
                 score: player.score
             })
         }
@@ -73,7 +75,7 @@ export default function renderScreen(document, game, requestAnimationFrame, curr
             }
 
             row.setAttribute('class', class_attribute)
-            cell_playerId.innerHTML = player.playerId
+            cell_playerId.innerHTML = player.nick
             cell_playerScore.innerHTML = player.score
 
             row.appendChild(cell_playerId)
@@ -95,7 +97,7 @@ export default function renderScreen(document, game, requestAnimationFrame, curr
             const cell_playerScore = document.createElement('td')
 
             row.setAttribute('class', 'current-player')
-            cell_playerId.innerHTML = player.playerId
+            cell_playerId.innerHTML = player.nick
             cell_playerScore.innerHTML = player.score
 
             row.appendChild(cell_playerId)

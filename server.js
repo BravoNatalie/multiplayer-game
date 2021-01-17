@@ -23,9 +23,17 @@ sockets.on('connection', (socket) => {
     const playerId = socket.id
     console.log(`> Player connected: ${playerId}`)
 
-    game.addPlayer({ playerId: playerId })
+    socket.on('send-nickname', (nickname) => {
+        //socket.nickname = nickname
+        game.addPlayer({ playerId: playerId, playerNick: nickname})
+        //users.push(socket.nickname)
+        console.log(`> nick: ${nickname}`)
+    })
+
+    // game.addPlayer({ playerId: playerId })
 
     socket.emit('setup', game.state)
+
 
     socket.on('disconnect', () => {
         game.removePlayer({ playerId: playerId })

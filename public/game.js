@@ -35,11 +35,13 @@ export default function createGame() {
 
     function addPlayer(command) {
         const playerId = command.playerId
+        const playerNick = command.playerNick
         const playerX = 'playerX' in command ? command.playerX : Math.floor(Math.random() * state.screen.width)
         const playerY = 'playerY' in command ? command.playerY : Math.floor(Math.random() * state.screen.height)
         const score = 0
 
         state.players[playerId] = {
+            nick: playerNick,
             x: playerX,
             y: playerY,
             score
@@ -48,6 +50,7 @@ export default function createGame() {
         notifyAll({
             type: 'add-player',
             playerId,
+            playerNick,
             playerX,
             playerY,
             score,
